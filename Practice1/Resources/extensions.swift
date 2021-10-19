@@ -38,7 +38,7 @@ extension UIView {
 extension DateFormatter {
     static let dateFormatter: DateFormatter = {
        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.dateFormat = "MM월 dd일"
         return dateFormatter
     }()
     
