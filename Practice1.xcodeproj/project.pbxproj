@@ -22,9 +22,24 @@
 		F695EEA5270C3C6E008A53A2 /* MainViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695EEA4270C3C6E008A53A2 /* MainViewControllerModel.swift */; };
 		F695EEAB271464BD008A53A2 /* TodayTipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695EEAA271464BD008A53A2 /* TodayTipCollectionViewCell.swift */; };
 		F695EEAD271464E1008A53A2 /* CheckDuesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695EEAC271464E1008A53A2 /* CheckDuesCollectionViewCell.swift */; };
-		F695EEAF27146507008A53A2 /* SeperateCollectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695EEAE27146507008A53A2 /* SeperateCollectionCollectionViewCell.swift */; };
+		F695EEAF27146507008A53A2 /* TrashCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695EEAE27146507008A53A2 /* TrashCollectionViewCell.swift */; };
 		F695EEB1271469D9008A53A2 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695EEB0271469D9008A53A2 /* extensions.swift */; };
 		F695EEB427146C80008A53A2 /* TodayTipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695EEB327146C80008A53A2 /* TodayTipModel.swift */; };
+		F695EEB8271575F3008A53A2 /* CheckDuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695EEB7271575F3008A53A2 /* CheckDuesModel.swift */; };
+		F695EEBA27159F3F008A53A2 /* TrachCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695EEB927159F3F008A53A2 /* TrachCollectionModel.swift */; };
+		F695EEBF2715EBB5008A53A2 /* MapoPeacefull.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F695EEBE2715EBB5008A53A2 /* MapoPeacefull.ttf */; };
+		F69D80D227171191004D1F7F /* CheckDuesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80D127171191004D1F7F /* CheckDuesTableViewCell.swift */; };
+		F69D80D427173FCF004D1F7F /* ButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80D327173FCF004D1F7F /* ButtonExtensions.swift */; };
+		F69D80D627188091004D1F7F /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80D527188091004D1F7F /* CustomSegmentedControl.swift */; };
+		F69D80D92719D0F3004D1F7F /* ShelfViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80D82719D0F3004D1F7F /* ShelfViewModel.swift */; };
+		F69D80DB2719D175004D1F7F /* RefrigeratorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80DA2719D175004D1F7F /* RefrigeratorViewModel.swift */; };
+		F69D80DE2719F0E6004D1F7F /* ShelfCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80DD2719F0E6004D1F7F /* ShelfCollectionViewCell.swift */; };
+		F69D80E02719F0F6004D1F7F /* RefrigeratorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80DF2719F0F6004D1F7F /* RefrigeratorCollectionViewCell.swift */; };
+		F69D80E22719F19E004D1F7F /* FoodViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80E12719F19E004D1F7F /* FoodViewControllerViewModel.swift */; };
+		F69D80E52719F9E5004D1F7F /* FoodStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80E42719F9E5004D1F7F /* FoodStorageViewController.swift */; };
+		F69D80E72719F9EF004D1F7F /* FoodRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80E62719F9EF004D1F7F /* FoodRecipeViewController.swift */; };
+		F69D80E9271AD10C004D1F7F /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80E8271AD10C004D1F7F /* ColumnFlowLayout.swift */; };
+		F69D80EB271AF1D8004D1F7F /* FoodIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80EA271AF1D8004D1F7F /* FoodIconCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,9 +62,24 @@
 		F695EEA4270C3C6E008A53A2 /* MainViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerModel.swift; sourceTree = "<group>"; };
 		F695EEAA271464BD008A53A2 /* TodayTipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTipCollectionViewCell.swift; sourceTree = "<group>"; };
 		F695EEAC271464E1008A53A2 /* CheckDuesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDuesCollectionViewCell.swift; sourceTree = "<group>"; };
-		F695EEAE27146507008A53A2 /* SeperateCollectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeperateCollectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		F695EEAE27146507008A53A2 /* TrashCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashCollectionViewCell.swift; sourceTree = "<group>"; };
 		F695EEB0271469D9008A53A2 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		F695EEB327146C80008A53A2 /* TodayTipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTipModel.swift; sourceTree = "<group>"; };
+		F695EEB7271575F3008A53A2 /* CheckDuesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDuesModel.swift; sourceTree = "<group>"; };
+		F695EEB927159F3F008A53A2 /* TrachCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrachCollectionModel.swift; sourceTree = "<group>"; };
+		F695EEBE2715EBB5008A53A2 /* MapoPeacefull.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MapoPeacefull.ttf; sourceTree = "<group>"; };
+		F69D80D127171191004D1F7F /* CheckDuesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDuesTableViewCell.swift; sourceTree = "<group>"; };
+		F69D80D327173FCF004D1F7F /* ButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtensions.swift; sourceTree = "<group>"; };
+		F69D80D527188091004D1F7F /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		F69D80D82719D0F3004D1F7F /* ShelfViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfViewModel.swift; sourceTree = "<group>"; };
+		F69D80DA2719D175004D1F7F /* RefrigeratorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigeratorViewModel.swift; sourceTree = "<group>"; };
+		F69D80DD2719F0E6004D1F7F /* ShelfCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfCollectionViewCell.swift; sourceTree = "<group>"; };
+		F69D80DF2719F0F6004D1F7F /* RefrigeratorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigeratorCollectionViewCell.swift; sourceTree = "<group>"; };
+		F69D80E12719F19E004D1F7F /* FoodViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewControllerViewModel.swift; sourceTree = "<group>"; };
+		F69D80E42719F9E5004D1F7F /* FoodStorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodStorageViewController.swift; sourceTree = "<group>"; };
+		F69D80E62719F9EF004D1F7F /* FoodRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRecipeViewController.swift; sourceTree = "<group>"; };
+		F69D80E8271AD10C004D1F7F /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
+		F69D80EA271AF1D8004D1F7F /* FoodIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIconCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +132,12 @@
 		F695EE7A27085695008A53A2 /* Practice1 */ = {
 			isa = PBXGroup;
 			children = (
-				F695EEA62714340E008A53A2 /* Models */,
+				F695EEBD2715EB6D008A53A2 /* Font */,
+				F695EE94270B0201008A53A2 /* CellViewModels */,
+				F695EEA0270C12EC008A53A2 /* ViewCells */,
 				F695EEA3270C3C40008A53A2 /* ViewModels */,
 				F695EE93270B01F1008A53A2 /* Controllers */,
-				F695EEA0270C12EC008A53A2 /* ViewCells */,
-				F695EE94270B0201008A53A2 /* CellViewModels */,
+				F695EEA62714340E008A53A2 /* Models */,
 				F695EE95270B0220008A53A2 /* Story */,
 				F695EE91270B01C8008A53A2 /* Resources */,
 				F695EE8927085696008A53A2 /* Info.plist */,
@@ -120,6 +151,8 @@
 				F695EE7B27085695008A53A2 /* AppDelegate.swift */,
 				F695EE7D27085695008A53A2 /* SceneDelegate.swift */,
 				F695EEB0271469D9008A53A2 /* extensions.swift */,
+				F69D80D327173FCF004D1F7F /* ButtonExtensions.swift */,
+				F69D80D527188091004D1F7F /* CustomSegmentedControl.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -157,6 +190,7 @@
 				F695EE7F27085695008A53A2 /* ViewController.swift */,
 				F695EE96270C1244008A53A2 /* MainViewController.swift */,
 				F695EE98270C124E008A53A2 /* FoodViewController.swift */,
+				F69D80E32719F981004D1F7F /* FoodVCs */,
 				F695EE9A270C1259008A53A2 /* CommunityViewController.swift */,
 			);
 			path = Core;
@@ -173,6 +207,7 @@
 		F695EEA0270C12EC008A53A2 /* ViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				F69D80DC2719F0D5004D1F7F /* Food */,
 				F695EEA9271464A6008A53A2 /* Main */,
 			);
 			path = ViewCells;
@@ -182,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				F695EEA4270C3C6E008A53A2 /* MainViewControllerModel.swift */,
+				F69D80E12719F19E004D1F7F /* FoodViewControllerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -189,6 +225,7 @@
 		F695EEA62714340E008A53A2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F69D80D72719D0DE004D1F7F /* Food */,
 				F695EEB227146C66008A53A2 /* Main */,
 			);
 			path = Models;
@@ -199,7 +236,8 @@
 			children = (
 				F695EEAA271464BD008A53A2 /* TodayTipCollectionViewCell.swift */,
 				F695EEAC271464E1008A53A2 /* CheckDuesCollectionViewCell.swift */,
-				F695EEAE27146507008A53A2 /* SeperateCollectionCollectionViewCell.swift */,
+				F69D80D127171191004D1F7F /* CheckDuesTableViewCell.swift */,
+				F695EEAE27146507008A53A2 /* TrashCollectionViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -208,8 +246,47 @@
 			isa = PBXGroup;
 			children = (
 				F695EEB327146C80008A53A2 /* TodayTipModel.swift */,
+				F695EEB7271575F3008A53A2 /* CheckDuesModel.swift */,
+				F695EEB927159F3F008A53A2 /* TrachCollectionModel.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		F695EEBD2715EB6D008A53A2 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				F695EEBE2715EBB5008A53A2 /* MapoPeacefull.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		F69D80D72719D0DE004D1F7F /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				F69D80D82719D0F3004D1F7F /* ShelfViewModel.swift */,
+				F69D80DA2719D175004D1F7F /* RefrigeratorViewModel.swift */,
+			);
+			path = Food;
+			sourceTree = "<group>";
+		};
+		F69D80DC2719F0D5004D1F7F /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				F69D80DD2719F0E6004D1F7F /* ShelfCollectionViewCell.swift */,
+				F69D80DF2719F0F6004D1F7F /* RefrigeratorCollectionViewCell.swift */,
+				F69D80E8271AD10C004D1F7F /* ColumnFlowLayout.swift */,
+				F69D80EA271AF1D8004D1F7F /* FoodIconCollectionViewCell.swift */,
+			);
+			path = Food;
+			sourceTree = "<group>";
+		};
+		F69D80E32719F981004D1F7F /* FoodVCs */ = {
+			isa = PBXGroup;
+			children = (
+				F69D80E42719F9E5004D1F7F /* FoodStorageViewController.swift */,
+				F69D80E62719F9EF004D1F7F /* FoodRecipeViewController.swift */,
+			);
+			path = FoodVCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +351,7 @@
 				F695EE8827085696008A53A2 /* LaunchScreen.storyboard in Resources */,
 				F695EE8527085696008A53A2 /* Assets.xcassets in Resources */,
 				F695EE8327085695008A53A2 /* Main.storyboard in Resources */,
+				F695EEBF2715EBB5008A53A2 /* MapoPeacefull.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,18 +405,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				F695EEAB271464BD008A53A2 /* TodayTipCollectionViewCell.swift in Sources */,
-				F695EEAF27146507008A53A2 /* SeperateCollectionCollectionViewCell.swift in Sources */,
+				F69D80D627188091004D1F7F /* CustomSegmentedControl.swift in Sources */,
+				F695EEAF27146507008A53A2 /* TrashCollectionViewCell.swift in Sources */,
 				F695EE8027085695008A53A2 /* ViewController.swift in Sources */,
+				F69D80D427173FCF004D1F7F /* ButtonExtensions.swift in Sources */,
+				F69D80E52719F9E5004D1F7F /* FoodStorageViewController.swift in Sources */,
+				F695EEB8271575F3008A53A2 /* CheckDuesModel.swift in Sources */,
+				F695EEBA27159F3F008A53A2 /* TrachCollectionModel.swift in Sources */,
 				F695EEB1271469D9008A53A2 /* extensions.swift in Sources */,
 				F695EE7C27085695008A53A2 /* AppDelegate.swift in Sources */,
 				F695EE90270856A9008A53A2 /* ViewModel.swift in Sources */,
 				F695EE7E27085695008A53A2 /* SceneDelegate.swift in Sources */,
 				F695EEB427146C80008A53A2 /* TodayTipModel.swift in Sources */,
 				F695EE99270C124E008A53A2 /* FoodViewController.swift in Sources */,
+				F69D80DB2719D175004D1F7F /* RefrigeratorViewModel.swift in Sources */,
+				F69D80D92719D0F3004D1F7F /* ShelfViewModel.swift in Sources */,
+				F69D80DE2719F0E6004D1F7F /* ShelfCollectionViewCell.swift in Sources */,
 				F695EEAD271464E1008A53A2 /* CheckDuesCollectionViewCell.swift in Sources */,
 				F695EEA5270C3C6E008A53A2 /* MainViewControllerModel.swift in Sources */,
+				F69D80E9271AD10C004D1F7F /* ColumnFlowLayout.swift in Sources */,
 				F695EE97270C1244008A53A2 /* MainViewController.swift in Sources */,
 				F695EE9B270C1259008A53A2 /* CommunityViewController.swift in Sources */,
+				F69D80EB271AF1D8004D1F7F /* FoodIconCollectionViewCell.swift in Sources */,
+				F69D80E02719F0F6004D1F7F /* RefrigeratorCollectionViewCell.swift in Sources */,
+				F69D80E72719F9EF004D1F7F /* FoodRecipeViewController.swift in Sources */,
+				F69D80E22719F19E004D1F7F /* FoodViewControllerViewModel.swift in Sources */,
+				F69D80D227171191004D1F7F /* CheckDuesTableViewCell.swift in Sources */,
 				F695EE9F270C12AD008A53A2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
