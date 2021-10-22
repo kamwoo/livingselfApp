@@ -8,13 +8,13 @@
 import UIKit
 
 enum FoodSectionType {
-    case shelf(viewModel: [ShelfViewModel])
-    case refrigerator(viewModel: [RefrigeratorViewModel])
+    case shelf(viewModel: [FoodViewModel])
+    case refrigerator(viewModel: [FoodViewModel])
 }
 
 class FoodStorageViewController: UIViewController {
 
-    private var FoodSection = [RefrigeratorViewModel]()
+    private var FoodSection = [FoodViewModel]()
     
     lazy private var foodCollectionView : UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -78,7 +78,7 @@ extension FoodStorageViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.bounds.width, height: view.bounds.height/2-60)
+        return CGSize(width: view.bounds.width, height: view.bounds.height/2 - view.bounds.height/12)
     }
 }
 

@@ -1,4 +1,5 @@
 PODS:
+  - CHTCollectionViewWaterfallLayout/Swift (0.9.8)
   - RxCocoa (6.2.0):
     - RxRelay (= 6.2.0)
     - RxSwift (= 6.2.0)
@@ -8,25 +9,34 @@ PODS:
   - RxViewController (2.0.0):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
 
 DEPENDENCIES:
+  - CHTCollectionViewWaterfallLayout/Swift
   - RxCocoa
   - RxSwift
   - RxViewController
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
+    - CHTCollectionViewWaterfallLayout
     - RxCocoa
     - RxRelay
     - RxSwift
     - RxViewController
+    - SDWebImage
 
 SPEC CHECKSUMS:
+  CHTCollectionViewWaterfallLayout: 5f241d2480ab4939aa0d1ad4981de9eef1fbe60d
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   RxViewController: 56486fa0afd629a1d6b5ba077f3b8cd9dc31b5d2
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
-PODFILE CHECKSUM: fa120f5bc5eba69d2a7ac499010c17c57e849e25
+PODFILE CHECKSUM: 59740ca9925fd9df5f09b8f23ee307d15bfcff2c
 
 COCOAPODS: 1.10.1

@@ -26,7 +26,8 @@ class TrashCollectionViewCell: UICollectionViewCell, CustomSegmentedControlDeleg
                           y: contentView.height/11,
                           width: contentView.width*7/9,
                           height: contentView.height/10),
-            buttonTitles: week, startIndex: 4)
+            buttonTitles: week,
+            startIndex: 3)
         contentView.addSubview(codeSegmented)
         codeSegmented.delegate = self
     }

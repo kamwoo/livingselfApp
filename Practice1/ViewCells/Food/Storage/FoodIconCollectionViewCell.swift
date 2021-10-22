@@ -18,6 +18,7 @@ class FoodIconCollectionViewCell: UICollectionViewCell {
     private let IconNameLabel: UILabel = {
        let label = UILabel()
         label.textAlignment = .center
+        label.font = UIFont(name: "MapoPeacefull", size: 15)
         return label
     }()
     
@@ -51,7 +52,7 @@ class FoodIconCollectionViewCell: UICollectionViewCell {
         IconNameLabel.text = ""
     }
     
-    func configure(_ viewModel: ShelfViewModel){
+    func configure(_ viewModel: FoodViewModel){
         IconImageView.image = UIImage(systemName: viewModel.foodIcon)
         IconNameLabel.text = viewModel.foodName
     }
