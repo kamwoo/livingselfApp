@@ -1,5 +1,5 @@
 //
-//  ShelfCollectionViewCell.swift
+//  RefrigeratorCollectionViewCell.swift
 //  Practice1
 //
 //  Created by wooyeong kam on 2021/10/16.
@@ -8,15 +8,10 @@
 import Foundation
 import UIKit
 
-enum CollectionViewUpdateState<T>{
-    case delete(Int)
-    case insert(T, Int)
-}
-
-class ShelfCollectionViewCell: UICollectionViewCell {
-    static let identifier = "ShelfCollectionViewCell"
+class RefrigeratorCollectionViewCell: UICollectionViewCell {
+    static let identifier = "RefrigeratorCollectionViewCell"
     
-    private var sampleDate = [ShelfViewModel]()
+    private var sampleDate = [FoodViewModel]()
     
     private let collectionView : UICollectionView = {
         let collectView = UICollectionView(frame: .zero, collectionViewLayout: ColumnFlowLayout())
@@ -46,8 +41,8 @@ class ShelfCollectionViewCell: UICollectionViewCell {
     
     @objc private func didTapInsertButton(){
         let sampleUpdates = [
-            CollectionViewUpdateState<ShelfViewModel>
-                .insert(ShelfViewModel(foodName: "오뎅", foodIcon: "heart"),
+            CollectionViewUpdateState<FoodViewModel>
+                .insert(FoodViewModel(foodName: "오뎅", foodIcon: "heart"),
                         collectionView.numberOfItems(inSection: 0))
         ]
         performUpdate(sampleUpdates: sampleUpdates)
@@ -77,16 +72,16 @@ class ShelfCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(){
-        sampleDate.append(ShelfViewModel(foodName: "파", foodIcon: "heart"))
-        sampleDate.append(ShelfViewModel(foodName: "김치", foodIcon: "heart"))
-        sampleDate.append(ShelfViewModel(foodName: "무", foodIcon: "heart"))
-        sampleDate.append(ShelfViewModel(foodName: "배", foodIcon: "heart"))
+        sampleDate.append(FoodViewModel(foodName: "파", foodIcon: "heart"))
+        sampleDate.append(FoodViewModel(foodName: "김치", foodIcon: "heart"))
+        sampleDate.append(FoodViewModel(foodName: "무", foodIcon: "heart"))
+        sampleDate.append(FoodViewModel(foodName: "배", foodIcon: "heart"))
     }
     
-    private func performUpdate(sampleUpdates: [CollectionViewUpdateState<ShelfViewModel>]){
+    private func performUpdate(sampleUpdates: [CollectionViewUpdateState<FoodViewModel>]){
         collectionView.performBatchUpdates{
             var deletes = [Int]()
-            var inserts = [(shelf:ShelfViewModel, index:Int)]()
+            var inserts = [(shelf:FoodViewModel, index:Int)]()
             
             sampleUpdates.forEach {
                 switch $0 {
@@ -107,9 +102,10 @@ class ShelfCollectionViewCell: UICollectionViewCell {
             print("update")
         }
     }
+    
 }
 
-extension ShelfCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension RefrigeratorCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sampleDate.count
     }
@@ -127,9 +123,10 @@ extension ShelfCollectionViewCell: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sampleUpdates = [
-            CollectionViewUpdateState<ShelfViewModel>.delete(indexPath.row)
+            CollectionViewUpdateState<FoodViewModel>.delete(indexPath.row)
         ]
         performUpdate(sampleUpdates: sampleUpdates)
     }
     
 }
+

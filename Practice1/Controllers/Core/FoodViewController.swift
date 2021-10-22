@@ -7,7 +7,8 @@
 
 import UIKit
 
-class FoodViewController: UIViewController, CustomSegmentedControlDelegate {
+class FoodViewController: UIViewController {
+    
     private let StorageVC = FoodStorageViewController()
     private let RecipeVC = FoodRecipeViewController()
     
@@ -23,12 +24,15 @@ class FoodViewController: UIViewController, CustomSegmentedControlDelegate {
         return view
     }()
     
+    private let ToggleView = FoodToggleView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(displayP3Red: 246/255, green: 238/255, blue: 221/255, alpha: 1)
         view.addSubview(topView)
         configureScrollView()
-        configureSegment()
+        view.addSubview(ToggleView)
+        ToggleView.delegate = self
         addChildView()
     }
     
@@ -51,23 +55,6 @@ class FoodViewController: UIViewController, CustomSegmentedControlDelegate {
         scrollView.contentSize = CGSize(width: view.width*2, height: scrollView.height)
     }
     
-    private func configureSegment(){
-        let segHeight = view.bounds.height/20
-        let segment = CustomSegmentedControl(
-            frame: CGRect(x: view.bounds.width/4, y: segHeight, width: view.bounds.width/2, height: segHeight),
-            buttonTitles: ["Foods","Recipes"],
-            startIndex: 0)
-        view.addSubview(segment)
-        segment.delegate = self
-    }
-    
-    func ChangeToIndex(index: Int) {
-        if index == 0 {
-            scrollView.setContentOffset(.zero, animated: true)
-        }else{
-            scrollView.setContentOffset(CGPoint(x: view.width, y: 0), animated: true)
-        }
-    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -79,13 +66,33 @@ class FoodViewController: UIViewController, CustomSegmentedControlDelegate {
                                   y: topView.bottom,
                                   width: view.bounds.width,
                                   height: view.bounds.height-topView.height)
+        let ToggleViewWidth = view.bounds.width*2/3
+        let ToggleViewHeight = view.bounds.height/22
+        ToggleView.frame = CGRect(x: view.bounds.width/2 - ToggleViewWidth/2,
+                                  y: topView.bottom - ToggleViewHeight*4/3,
+                                  width: ToggleViewWidth,
+                                  height: ToggleViewHeight)
     }
 }
 
 extension FoodViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.x >= (view.width - 100) {
-//
-//        }
+        if scrollView.contentOffset.x >= (view.width - 100) {
+            ToggleView.update(for: .Recipe)
+        }
+        else{
+            ToggleView.update(for: .Storage)
+        }
     }
+}
+
+extension FoodViewController: FoodToggleViewDelegate {
+    func FoodToggleViewDidTapStorage(_ toggleView: FoodToggleView) {
+        scrollView.setContentOffset(.zero, animated: true)
+    }
+    
+    func FoodToggleViewDidTapRecipe(_ toggleView: FoodToggleView) {
+        scrollView.setContentOffset(CGPoint(x: view.width, y: 0), animated: true)
+    }
+    
 }

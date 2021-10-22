@@ -9,4 +9,6 @@ target 'Practice1' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxViewController'
+  pod 'SDWebImage'
+  pod 'CHTCollectionViewWaterfallLayout/Swift'
 end

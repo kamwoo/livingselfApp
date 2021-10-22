@@ -14,8 +14,8 @@
             <objects>
                 <navigationController id="X0e-zy-2st" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="message" catalog="system" id="VnN-Po-Xu7"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="hOj-Bc-N0d">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hOj-Bc-N0d">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

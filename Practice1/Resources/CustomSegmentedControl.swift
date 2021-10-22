@@ -16,7 +16,7 @@ class CustomSegmentedControl: UIView {
     
     weak var delegate: CustomSegmentedControlDelegate?
     
-    private var selectedIndex = 3
+    private var selectedIndex = 0
     
     private var buttonTitles: [String]!
     private var buttons: [UIButton] = []
@@ -75,12 +75,14 @@ class CustomSegmentedControl: UIView {
         }
     }
     
-    private func setIndex(index: Int){
+    func setIndex(index: Int){
         buttons.forEach({$0.setTitleColor(textColor, for: .normal)})
         let button = buttons[index]
         button.setTitleColor(selectorTextColor, for: .normal)
         let selectorPosition = frame.width/CGFloat(buttonTitles.count)*CGFloat(index)
-        self.selectorView.frame.origin.x = selectorPosition
+        UIView.animate(withDuration: 0.2){
+            self.selectorView.frame.origin.x = selectorPosition
+        }
         delegate?.ChangeToIndex(index: index)
     }
     
