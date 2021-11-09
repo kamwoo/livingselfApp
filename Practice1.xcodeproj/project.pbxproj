@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		53A63D2E7644163CB58A446C /* Pods_Practice1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F4BC0EC53167050EE6A3F2 /* Pods_Practice1.framework */; };
+		F693EF75273405690094DAFB /* InserButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F693EF74273405690094DAFB /* InserButtonCollectionViewCell.swift */; };
+		F693EF7D2738FF3A0094DAFB /* FoodRecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F693EF7C2738FF390094DAFB /* FoodRecipeModel.swift */; };
 		F695EE7C27085695008A53A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695EE7B27085695008A53A2 /* AppDelegate.swift */; };
 		F695EE7E27085695008A53A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695EE7D27085695008A53A2 /* SceneDelegate.swift */; };
 		F695EE8027085695008A53A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695EE7F27085695008A53A2 /* ViewController.swift */; };
@@ -45,12 +47,16 @@
 		F69D80F627204010004D1F7F /* CommunityCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80F527204010004D1F7F /* CommunityCollectionViewLayout.swift */; };
 		F69D80FB27204BED004D1F7F /* CommunityViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80FA27204BED004D1F7F /* CommunityViewControllerModel.swift */; };
 		F69D80FD27206957004D1F7F /* CommunityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80FC27206957004D1F7F /* CommunityCollectionViewCell.swift */; };
+		F69D81002723D915004D1F7F /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D80FF2723D915004D1F7F /* APICaller.swift */; };
+		F69D810327253E50004D1F7F /* CreateCheckDueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69D810227253E50004D1F7F /* CreateCheckDueViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1639C5223ACC26E2F267DC4A /* Pods-Practice1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice1.debug.xcconfig"; path = "Target Support Files/Pods-Practice1/Pods-Practice1.debug.xcconfig"; sourceTree = "<group>"; };
 		1B3713B81DCC2525EBE3ADCB /* Pods-Practice1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice1.release.xcconfig"; path = "Target Support Files/Pods-Practice1/Pods-Practice1.release.xcconfig"; sourceTree = "<group>"; };
 		49F4BC0EC53167050EE6A3F2 /* Pods_Practice1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practice1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F693EF74273405690094DAFB /* InserButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InserButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		F693EF7C2738FF390094DAFB /* FoodRecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRecipeModel.swift; sourceTree = "<group>"; };
 		F695EE7827085695008A53A2 /* Practice1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F695EE7B27085695008A53A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F695EE7D27085695008A53A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +96,8 @@
 		F69D80F527204010004D1F7F /* CommunityCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCollectionViewLayout.swift; sourceTree = "<group>"; };
 		F69D80FA27204BED004D1F7F /* CommunityViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewControllerModel.swift; sourceTree = "<group>"; };
 		F69D80FC27206957004D1F7F /* CommunityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCollectionViewCell.swift; sourceTree = "<group>"; };
+		F69D80FF2723D915004D1F7F /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		F69D810227253E50004D1F7F /* CreateCheckDueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCheckDueViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +150,7 @@
 		F695EE7A27085695008A53A2 /* Practice1 */ = {
 			isa = PBXGroup;
 			children = (
+				F69D80FE2723D901004D1F7F /* Managers */,
 				F695EEBD2715EB6D008A53A2 /* Font */,
 				F695EE94270B0201008A53A2 /* CellViewModels */,
 				F695EEA0270C12EC008A53A2 /* ViewCells */,
@@ -208,6 +217,7 @@
 		F695EE9D270C129E008A53A2 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				F69D810127253E34004D1F7F /* MainVCs */,
 				F69D80F227200542004D1F7F /* CommunityVCs */,
 				F69D80E32719F981004D1F7F /* FoodVCs */,
 				F695EE9E270C12AD008A53A2 /* SettingsViewController.swift */,
@@ -277,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				F69D80D82719D0F3004D1F7F /* FoodViewModel.swift */,
+				F693EF7C2738FF390094DAFB /* FoodRecipeModel.swift */,
 			);
 			path = Food;
 			sourceTree = "<group>";
@@ -307,6 +318,7 @@
 				F69D80DF2719F0F6004D1F7F /* RefrigeratorCollectionViewCell.swift */,
 				F69D80E8271AD10C004D1F7F /* ColumnFlowLayout.swift */,
 				F69D80EA271AF1D8004D1F7F /* FoodIconCollectionViewCell.swift */,
+				F693EF74273405690094DAFB /* InserButtonCollectionViewCell.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -334,6 +346,22 @@
 				F69D80FC27206957004D1F7F /* CommunityCollectionViewCell.swift */,
 			);
 			path = Community;
+			sourceTree = "<group>";
+		};
+		F69D80FE2723D901004D1F7F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F69D80FF2723D915004D1F7F /* APICaller.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F69D810127253E34004D1F7F /* MainVCs */ = {
+			isa = PBXGroup;
+			children = (
+				F69D810227253E50004D1F7F /* CreateCheckDueViewController.swift */,
+			);
+			path = MainVCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,8 +484,10 @@
 				F695EEAF27146507008A53A2 /* TrashCollectionViewCell.swift in Sources */,
 				F695EE8027085695008A53A2 /* ViewController.swift in Sources */,
 				F69D80F627204010004D1F7F /* CommunityCollectionViewLayout.swift in Sources */,
+				F69D810327253E50004D1F7F /* CreateCheckDueViewController.swift in Sources */,
 				F69D80D427173FCF004D1F7F /* ButtonExtensions.swift in Sources */,
 				F69D80E52719F9E5004D1F7F /* FoodStorageViewController.swift in Sources */,
+				F69D81002723D915004D1F7F /* APICaller.swift in Sources */,
 				F695EEB8271575F3008A53A2 /* CheckDuesModel.swift in Sources */,
 				F695EEBA27159F3F008A53A2 /* TrachCollectionModel.swift in Sources */,
 				F695EEB1271469D9008A53A2 /* extensions.swift in Sources */,
@@ -481,8 +511,10 @@
 				F69D80E02719F0F6004D1F7F /* RefrigeratorCollectionViewCell.swift in Sources */,
 				F69D80E72719F9EF004D1F7F /* FoodRecipeViewController.swift in Sources */,
 				F69D80E22719F19E004D1F7F /* FoodViewControllerViewModel.swift in Sources */,
+				F693EF7D2738FF3A0094DAFB /* FoodRecipeModel.swift in Sources */,
 				F69D80D227171191004D1F7F /* CheckDuesTableViewCell.swift in Sources */,
 				F69D80F1271FEFD8004D1F7F /* RecipeCollectionViewCell.swift in Sources */,
+				F693EF75273405690094DAFB /* InserButtonCollectionViewCell.swift in Sources */,
 				F695EE9F270C12AD008A53A2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,12 +664,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y4X8MCC3L6;
 				INFOPLIST_FILE = Practice1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-.Practice1";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kamwoo.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -651,12 +684,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y4X8MCC3L6;
 				INFOPLIST_FILE = Practice1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-.Practice1";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kamwoo.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

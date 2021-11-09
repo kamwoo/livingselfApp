@@ -7,18 +7,14 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 
 class MainViewContollerModel {
+    let disposeBag = DisposeBag()
+    
     lazy var tipObservable = BehaviorSubject<String>(value: "여름철 쓰레기는 봉지단위로 묶어놓는게 좋다.")
     
-    // 24시가 지나면 갱신
-    
-    lazy var dueObservalbe = BehaviorSubject<[checkDues]>(value: [
-        checkDues(dueName: "전기세", dueDate: Date(), payCheck: false),
-        checkDues(dueName: "가스비", dueDate: Date(), payCheck: true),
-        checkDues(dueName: "수도세", dueDate: Date(), payCheck: false),
-        checkDues(dueName: "월세", dueDate: Date(), payCheck: true)
-    ])
+    lazy var dueObservalbe = BehaviorSubject<[String]>(value: [""])
     
     lazy var trashObservable = BehaviorSubject<TrashCollectionModel>(value:
         TrashCollectionModel(currentDate: DateFormatter.dateFormatter.string(from: Date()),
@@ -27,4 +23,33 @@ class MainViewContollerModel {
                              startDisposeTime: "16:00",
                              endDisposeTime: "21:00")
     )
+    
+    private func dueObserv() -> Observable<[String]> {
+        if UserDefaults.standard.stringArray(forKey: "DuesList") == nil {
+            print("fetching-DuesList-nil")
+            UserDefaults.standard.set(["전기세"], forKey: "DuesList")
+            do {
+                try UserDefaults.standard.setObject(checkDues(dueDate: "11", dueCheck: false), forKey:"전기세")
+            }catch{
+                print(error.localizedDescription)
+            }
+        }
+        let dues = UserDefaults.standard.stringArray(forKey: "DuesList")
+        return Observable.create{ emitter in
+            emitter.onNext(dues!)
+            return Disposables.create()
+        }
+    }
+    
+    public func dueFetching(){
+        dueObserv()
+            .bind(to: dueObservalbe)
+            .disposed(by: disposeBag)
+    }
+    
+    init(){
+        dueFetching()
+    }
+    
+    
 }

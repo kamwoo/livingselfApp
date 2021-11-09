@@ -11,11 +11,12 @@ import RxSwift
 
 enum MainSectionType {
     case todayTip(viewModels: [todayTip])
-    case checkDues(viewModels: [[checkDues]])
+    case checkDues(viewModels: [[String]])
     case TrashCollection(viewModels: [TrashCollectionModel])
 }
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, CreateCheckDueViewControllerDelegate {
+    
     private let viewModel = MainViewContollerModel()
     
     private var mainSections = [MainSectionType]()
@@ -88,6 +89,22 @@ class MainViewController: UIViewController {
         
     }
     
+    private let plusButton: UIButton = {
+       let button = UIButton()
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.tintColor = .link
+        button.backgroundColor = .lightGray
+        return button
+    }()
+    
+    private let editButton: UIButton = {
+       let button = UIButton()
+        button.setImage(UIImage(systemName: "minus"), for: .normal)
+        button.tintColor = .red
+        button.backgroundColor = .lightGray
+        return button
+    }()
+    
     // MARK: - functions
 
     @objc private func didTapLocationLabel(){
@@ -101,13 +118,32 @@ class MainViewController: UIViewController {
         
     }
     
+    @objc private func didTapPlusButton(){
+        let vc = CreateCheckDueViewController()
+        vc.delegate = self
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @objc private func didTapEditButton(){
+        for key in UserDefaults.standard.dictionaryRepresentation().keys {
+            UserDefaults.standard.removeObject(forKey: key.description)
+        }
+    }
+    
+    func didTapComplete() {
+        viewModel.dueFetching()
+        MainCollectionView.reloadData()
+        
+    }
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        configure()
         MainCollectionViewConfigure()
+        configure()
         Modelconfigure()
     }
     
@@ -124,7 +160,17 @@ class MainViewController: UIViewController {
         
         viewModel.dueObservalbe
             .subscribe(onNext: { dues in
-                self.mainSections.append(.checkDues(viewModels: [dues]))
+                let dueIdx = self.mainSections.firstIndex(where: {
+                    if case .checkDues = $0{
+                        return true
+                    }
+                    return false
+                })
+                if let idx = dueIdx {
+                    self.mainSections[idx] = .checkDues(viewModels: [dues])
+                }else{
+                    self.mainSections.append(.checkDues(viewModels: [dues]))
+                }
             })
             .disposed(by: disposBag)
         
@@ -152,7 +198,12 @@ class MainViewController: UIViewController {
         view.addSubview(TopView)
         view.addSubview(LocationButton)
         LocationButton.addTarget(self, action: #selector(didTapLocationLabel), for: .touchUpInside)
+        view.addSubview(plusButton)
+        plusButton.addTarget(self, action: #selector(didTapPlusButton), for: .touchUpInside)
+        view.addSubview(editButton)
+        editButton.addTarget(self, action: #selector(didTapEditButton), for: .touchUpInside)
     }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -165,6 +216,9 @@ class MainViewController: UIViewController {
                                           y: TopView.bottom,
                                           width: view.bounds.width,
                                           height: view.bounds.height-TopView.height)
+        let buttonWidth : CGFloat = 40
+        plusButton.frame = CGRect(x: view.width/2-buttonWidth/2, y: view.height*7/10, width: buttonWidth, height: buttonWidth)
+        editButton.frame = CGRect(x: plusButton.right, y: view.height*7/10, width: buttonWidth, height: buttonWidth)
     }
     
     
@@ -181,7 +235,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case .todayTip(let tipModel):
             return tipModel.count
         case .checkDues(let checkModel):
-            print(checkModel.count)
             return checkModel.count
         case .TrashCollection(let trashModel):
             return trashModel.count
@@ -222,8 +275,5 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         }
         
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
     }
 }

@@ -76,7 +76,7 @@ class FoodToggleView: UIView {
         layoutIndicator()
     }
     
-    func layoutIndicator() {
+    private func layoutIndicator() {
         switch state {
         case .Storage:
             indicatorView.frame = CGRect(x: 0, y: StorageButton.bottom, width: width/2, height: 3)

@@ -77,8 +77,9 @@ class FoodViewController: UIViewController {
 
 extension FoodViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.x >= (view.width - 100) {
+        if scrollView.contentOffset.x == (view.width) {
             ToggleView.update(for: .Recipe)
+            FoodRecipeViewController().recipeUpdate()
         }
         else{
             ToggleView.update(for: .Storage)

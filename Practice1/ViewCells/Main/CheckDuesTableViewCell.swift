@@ -42,11 +42,6 @@ class CheckDuesTableViewCell: UITableViewCell {
         contentView.addSubview(dueName)
         contentView.addSubview(dueDate)
         contentView.addSubview(checkButton)
-        if checkState == false {
-            checkButton.tintColor = .systemGray
-        } else {
-            checkButton.tintColor = .systemGreen
-        }
         checkButton.addTarget(self, action: #selector(didTapCheckButton) , for: .touchUpInside)
     }
     
@@ -93,10 +88,22 @@ class CheckDuesTableViewCell: UITableViewCell {
         checkButton.tintColor = .systemGray
     }
     
-    func configure(_ viewModel:checkDues){
-        dueName.text = viewModel.dueName
-        dueDate.text = DateFormatter.dateFormatter.string(from: viewModel.dueDate)
-        checkState = viewModel.payCheck
+    func configure(_ viewModel:String){
+        let userDefaults = UserDefaults.standard
+        do {
+            let dueDateAndCheck = try userDefaults.getObject(forKey: viewModel, castTo: checkDues.self)
+            dueName.text = viewModel
+            dueDate.text = "매달" + dueDateAndCheck.dueDate
+            if dueDateAndCheck.dueCheck == true {
+                checkState = true
+                checkButton.tintColor = .systemGreen
+            }else{
+                checkState = false
+                checkButton.tintColor = .systemGray
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
 }
