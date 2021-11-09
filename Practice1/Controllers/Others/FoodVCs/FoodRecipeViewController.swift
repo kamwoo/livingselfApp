@@ -51,6 +51,11 @@ class FoodRecipeViewController: UIViewController {
                                  width: view.bounds.width,
                                  height: view.bounds.height - view.safeAreaInsets.bottom - view.safeAreaInsets.top)
     }
+    
+    func recipeUpdate(){
+        print("recipe update")
+        APICaller.shared.getRecipe()
+    }
 
 }
 

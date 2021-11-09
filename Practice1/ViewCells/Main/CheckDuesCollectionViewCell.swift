@@ -10,7 +10,7 @@ import UIKit
 class CheckDuesCollectionViewCell: UICollectionViewCell {
     static let identifier = "CheckDuesCollectionViewCell"
     
-    private var checkModels : [checkDues] = []
+    private var checkModels : [String] = []
     
     private let CheckTable: UITableView = {
         let table = UITableView()
@@ -37,8 +37,9 @@ class CheckDuesCollectionViewCell: UICollectionViewCell {
         CheckTable.frame = contentView.bounds
     }
     
-    func configure(_ viewModel:[checkDues]){
+    func configure(_ viewModel:[String]){
         checkModels = viewModel
+        CheckTable.reloadData()
     }
     
 }

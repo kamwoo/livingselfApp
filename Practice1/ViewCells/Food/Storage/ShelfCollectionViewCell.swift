@@ -13,7 +13,7 @@ enum CollectionViewUpdateState<T>{
     case insert(T, Int)
 }
 
-class ShelfCollectionViewCell: UICollectionViewCell {
+class ShelfCollectionViewCell: UICollectionViewCell, InserButtonCollectionViewCellDelegate {
     static let identifier = "ShelfCollectionViewCell"
     
     private var sampleDate = [FoodViewModel]()
@@ -23,20 +23,10 @@ class ShelfCollectionViewCell: UICollectionViewCell {
         return collectView
     }()
     
-    private let Insertbutton: UIButton = {
-       let button = UIButton()
-        button.layer.masksToBounds = true
-        button.backgroundColor = .green
-        button.setImage(UIImage(systemName: "plus"), for: .normal)
-        return button
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .white
         configureCollectionView()
-        contentView.addSubview(Insertbutton)
-        Insertbutton.addTarget(self, action: #selector(didTapInsertButton), for: .touchUpInside)
         configure()
     }
     
@@ -44,11 +34,11 @@ class ShelfCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc private func didTapInsertButton(){
+    func didTapPlusButton() {
         let sampleUpdates = [
             CollectionViewUpdateState<FoodViewModel>
                 .insert(FoodViewModel(foodName: "오뎅", foodIcon: "heart"),
-                        collectionView.numberOfItems(inSection: 0))
+                        collectionView.numberOfItems(inSection: 0)-1)
         ]
         performUpdate(sampleUpdates: sampleUpdates)
     }
@@ -57,6 +47,8 @@ class ShelfCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(collectionView)
         collectionView.register(FoodIconCollectionViewCell.self,
                                 forCellWithReuseIdentifier: FoodIconCollectionViewCell.identifier)
+        collectionView.register(InserButtonCollectionViewCell.self,
+                                forCellWithReuseIdentifier: InserButtonCollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
@@ -68,12 +60,6 @@ class ShelfCollectionViewCell: UICollectionViewCell {
                                       y: 0,
                                       width: contentView.bounds.width*5/6,
                                       height: contentView.bounds.height)
-        let buttonSize = contentView.bounds.width/8
-        Insertbutton.frame = CGRect(x: contentView.width/2-buttonSize/2,
-                                    y: contentView.bottom-buttonSize,
-                                    width: buttonSize,
-                                    height: buttonSize)
-        Insertbutton.layer.cornerRadius = buttonSize/2
     }
     
     func configure(){
@@ -102,7 +88,10 @@ class ShelfCollectionViewCell: UICollectionViewCell {
                 sampleDate.remove(at: $0)
             }
             inserts.sorted(by: {return $0.index <= $1.index})
-                .forEach{sampleDate.insert($0.shelf, at: $0.index)}
+                .forEach{
+                    print($0)
+                    sampleDate.insert($0.shelf, at: $0.index)
+                }
         }completion: { _ in
             print("update")
         }
@@ -111,21 +100,34 @@ class ShelfCollectionViewCell: UICollectionViewCell {
 
 extension ShelfCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sampleDate.count
+        return sampleDate.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: FoodIconCollectionViewCell.identifier,
-                for: indexPath) as? FoodIconCollectionViewCell else {
-            return UICollectionViewCell()
+        if indexPath.row != sampleDate.count{
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: FoodIconCollectionViewCell.identifier,
+                    for: indexPath) as? FoodIconCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            let viewModel = sampleDate[indexPath.row]
+            cell.configure(viewModel)
+            return cell
+        }else{
+            guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: InserButtonCollectionViewCell.identifier,
+                    for: indexPath) as? InserButtonCollectionViewCell else{
+                return UICollectionViewCell()
+            }
+            cell.delegate = self
+            return cell
         }
-        let viewModel = sampleDate[indexPath.row]
-        cell.configure(viewModel)
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard indexPath.row != sampleDate.count else {
+            return
+        }
         let sampleUpdates = [
             CollectionViewUpdateState<FoodViewModel>.delete(indexPath.row)
         ]

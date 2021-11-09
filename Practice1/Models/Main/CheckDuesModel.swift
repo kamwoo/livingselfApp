@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct checkDues{
-    let dueName: String
-    let dueDate: Date
-    let payCheck: Bool
+struct checkDues: Codable{
+    let dueDate: String
+    let dueCheck: Bool
 }
